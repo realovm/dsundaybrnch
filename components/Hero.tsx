@@ -56,11 +56,10 @@ export default function Hero() {
         playsInline
         poster="/images/hero-poster.jpg"
       >
-        {/* Drop the brand loop into /public/videos/hero-loop.mp4 */}
-        <source
-          src="https://res.cloudinary.com/hnhbf8yt/video/upload/v1784720068/IMG_5994_kmxxpj.mp4"
-          type="video/quicktime"/>
-      </video>
+      <source
+        src="https://res.cloudinary.com/hnhbf8yt/video/upload/v1784720068/IMG_5994_kmxxpj.mp4"
+        type="video/mp4"/>
+</video>
 
       <div className="absolute inset-0 bg-gradient-to-b from-brnch-espresso-deep/70 via-brnch-espresso-deep/40 to-brnch-espresso-deep/85" />
 
