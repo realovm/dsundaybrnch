@@ -26,7 +26,7 @@ export const upcomingEvents: PartyEvent[] = [
       "Can’t go to Vegas yet? Don’t worry D’SUNDAY BRNCH is bringing VEGAS to you in BENIN CITY",
     dressCode: "Stay swagged Up",
     hosts: ["DJ Vegas", ""],
-    image: "/images/events/vegasbrunch.jpg",
+    image: "/images/events/vegasbrunch.JPG",
   },
   {
     slug: "First-sunday-social",
