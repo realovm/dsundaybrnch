@@ -7,6 +7,7 @@ const povs = Array.from({ length: 8 }).map((_, i) => ({
   id: i + 1,
   src: `/videos/povs/${i + 1}.mp4`,
   poster: `/images/povs/${i + 1}.jpg`,
+  caption: `Edition ${8 - i} — the moment before the drop`,
 }));
 
 export default function PovsPage() {
