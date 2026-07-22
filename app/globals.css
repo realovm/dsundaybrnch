@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/* FONT FACES                                                          */
+/* Codec Pro & Amoresa are licensed fonts — drop the .woff2 files into */
+/* /public/fonts/ with these exact names and they activate instantly. */
+/* Until then, the fallback stacks below keep the same rhythm & mood. */
+/* ------------------------------------------------------------------ */
+
+@font-face {
+  font-family: "Codec Pro";
+  src: url("/fonts/CodecPro-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Codec Pro";
+  src: url("/fonts/CodecPro-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Amoresa";
+  src: url("/fonts/Amoresa.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ---- Brand palette ---- */
+  --brnch-orange: #ea662c;
+  --brnch-orange-deep: #c24f1d;
+  --brnch-espresso: #42302d;
+  --brnch-espresso-deep: #2b1f1d;
+  --brnch-cream: #efe3c4;
+  --brnch-paper: #f1f1f1;
+
+  --background: var(--brnch-paper);
+  --foreground: var(--brnch-espresso);
+}
+
+@theme inline {
+  --color-brnch-orange: var(--brnch-orange);
+  --color-brnch-orange-deep: var(--brnch-orange-deep);
+  --color-brnch-espresso: var(--brnch-espresso);
+  --color-brnch-espresso-deep: var(--brnch-espresso-deep);
+  --color-brnch-cream: var(--brnch-cream);
+  --color-brnch-paper: var(--brnch-paper);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-display: "Codec Pro", "Inter Tight", "Helvetica Neue", Arial, sans-serif;
+  --font-accent: "Amoresa", "Snell Roundhand", "Segoe Script", cursive;
+  --font-body: "Codec Pro", "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+
+html,
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+body {
+  cursor: default;
+}
+
+::selection {
+  background: var(--brnch-orange);
+  color: var(--brnch-cream);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+.font-accent {
+  font-family: var(--font-accent);
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+
+/* Lenis smooth-scroll requirement */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Respect reduced motion everywhere */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utility: eyebrow label */
+.eyebrow {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+/* Utility: hairline divider */
+.hairline {
+  height: 1px;
+  background: currentColor;
+  opacity: 0.15;
+}
+
+/* Custom scrollbar, quiet + on-brand */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--brnch-orange);
+  border-radius: 999px;
+  border: 2px solid var(--brnch-paper);
+}
