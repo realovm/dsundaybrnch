@@ -80,10 +80,10 @@ export default function Home() {
 
           <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-4">
             {[
-              "/images/featured/IMG_1770.JPG",
-              "/images/featured/IMG_1772.JPG",
-              "/images/featured/IMG_1774.JPG",
-              "/images/featured/IMG_1779.JPG",
+              "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784720336/2_fjewrm.jpg",
+              "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721329/8_oydbti.png",
+              "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721311/6_ppg3we.png",
+              "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721285/4_r4swfl.png",
             ].map((src, i) => (
               <Reveal key={src} delay={i * 0.08}>
                 <div

@@ -3,11 +3,22 @@ import MasonryGallery from "@/components/MasonryGallery";
 
 export const metadata = { title: "Lookbook — d'SundayBrnch" };
 
-const galleryImages = Array.from({ length: 15 }).map((_, i) => ({
-  src: `/images/lookbook/${i + 1}.jpg`,
-  alt: `D SUNDAY BRNCH moment ${i + 1}`,
-  tall: i % 3 === 0,
-}));
+const galleryImages = [
+  { src: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721311/6_ppg3we.jpg", alt: "D SUNDAY BRNCH moment 1", tall: true },
+  { src: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721329/8_oydbti.jpg", alt: "D SUNDAY BRNCH moment 2", tall: false },
+  { src: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721345/10_uuqr9p.jpg", alt: "D SUNDAY BRNCH moment 3", tall: true },
+  { src: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721409/15_ht1pgl.jpg", alt: "D SUNDAY BRNCH moment 4", tall: false },
+  { src: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721362/12_z57rhf.jpg", alt: "D SUNDAY BRNCH moment 5", tall: true },
+  { src: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721406/14_abvstd.jpg", alt: "D SUNDAY BRNCH moment 6", tall: false },
+  { src: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721404/13_x366ot.jpg", alt: "D SUNDAY BRNCH moment 7", tall: true },
+  { src: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721354/11_oxrx45.jpg", alt: "D SUNDAY BRNCH moment 8", tall: false },
+  { src: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721362/12_z57rhf.jpg", alt: "D SUNDAY BRNCH moment 9", tall: true },
+  { src: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721300/5_rqfo11.jpg", alt: "D SUNDAY BRNCH moment 10", tall: false },
+  { src: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721321/7_eticy7.jpg", alt: "D SUNDAY BRNCH moment 11", tall: true },
+  { src: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784720336/2_fjewrm.jpg", alt: "D SUNDAY BRNCH moment 12", tall: false },
+  
+  
+];
 
 export default function LookbookPage() {
   return (

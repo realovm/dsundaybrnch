@@ -3,12 +3,17 @@ import PovCard from "@/components/PovCard";
 
 export const metadata = { title: "POVs — d'SundayBrnch" };
 
-const povs = Array.from({ length: 8 }).map((_, i) => ({
-  id: i + 1,
-  src: `/videos/povs/${i + 1}.mp4`,
-  poster: `/images/povs/${i + 1}.jpg`,
-  caption: `Edition ${8 - i} — the moment before the drop`,
-}));
+const povs = [
+  { id: 1, src: "https://res.cloudinary.com/hnhbf8yt/video/upload/v.../pov-1.mp4", poster: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784720352/3_ua6be6.jpg",},
+  { id: 2, src: "https://res.cloudinary.com/hnhbf8yt/video/upload/v.../pov-2.mp4", poster: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784720297/1_rltly1.jpg",},
+  { id: 3, src: "https://res.cloudinary.com/hnhbf8yt/video/upload/v.../pov-2.mp4", poster: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721300/5_rqfo11.jpg",},
+  { id: 4, src: "https://res.cloudinary.com/hnhbf8yt/video/upload/v.../pov-2.mp4", poster: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721362/12_z57rhf.jpg",},
+  { id: 5, src: "https://res.cloudinary.com/hnhbf8yt/video/upload/v.../pov-2.mp4", poster: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721406/14_abvstd.jpg",},
+  { id: 6, src: "https://res.cloudinary.com/hnhbf8yt/video/upload/v.../pov-2.mp4", poster: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721321/7_eticy7.jpg",},
+  { id: 7, src: "https://res.cloudinary.com/hnhbf8yt/video/upload/v.../pov-2.mp4", poster: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721354/11_oxrx45.jpg",},
+  { id: 8, src: "https://res.cloudinary.com/hnhbf8yt/video/upload/v.../pov-2.mp4", poster: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721409/15_ht1pgl.jpg",},
+  
+];
 
 export default function PovsPage() {
   return (
