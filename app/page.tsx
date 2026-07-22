@@ -81,9 +81,9 @@ export default function Home() {
           <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-4">
             {[
               "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784720336/2_fjewrm.jpg",
-              "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721329/8_oydbti.png",
-              "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721311/6_ppg3we.png",
-              "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721285/4_r4swfl.png",
+              "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721329/8_oydbti.jpg",
+              "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721311/6_ppg3we.jpg",
+              "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721285/4_r4swfl.jpg",
             ].map((src, i) => (
               <Reveal key={src} delay={i * 0.08}>
                 <div

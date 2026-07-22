@@ -4,14 +4,14 @@ import PovCard from "@/components/PovCard";
 export const metadata = { title: "POVs — d'SundayBrnch" };
 
 const povs = [
-  { id: 1, src: "https://res.cloudinary.com/hnhbf8yt/video/upload/v.../pov-1.mp4", poster: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784720352/3_ua6be6.jpg",},
-  { id: 2, src: "https://res.cloudinary.com/hnhbf8yt/video/upload/v.../pov-2.mp4", poster: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784720297/1_rltly1.jpg",},
-  { id: 3, src: "https://res.cloudinary.com/hnhbf8yt/video/upload/v.../pov-2.mp4", poster: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721300/5_rqfo11.jpg",},
-  { id: 4, src: "https://res.cloudinary.com/hnhbf8yt/video/upload/v.../pov-2.mp4", poster: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721362/12_z57rhf.jpg",},
-  { id: 5, src: "https://res.cloudinary.com/hnhbf8yt/video/upload/v.../pov-2.mp4", poster: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721406/14_abvstd.jpg",},
-  { id: 6, src: "https://res.cloudinary.com/hnhbf8yt/video/upload/v.../pov-2.mp4", poster: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721321/7_eticy7.jpg",},
-  { id: 7, src: "https://res.cloudinary.com/hnhbf8yt/video/upload/v.../pov-2.mp4", poster: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721354/11_oxrx45.jpg",},
-  { id: 8, src: "https://res.cloudinary.com/hnhbf8yt/video/upload/v.../pov-2.mp4", poster: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721409/15_ht1pgl.jpg",},
+  { id: 1, src: "https://res.cloudinary.com/hnhbf8yt/video/upload/v.../pov-1.mp4", poster: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784720336/2_fjewrm.jpg", caption: "Aint that the girl from Love island??" },
+  { id: 2, src: "https://res.cloudinary.com/hnhbf8yt/video/upload/v.../pov-2.mp4", poster: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784720297/1_rltly1.jpg", caption: "Sound check" },
+  { id: 3, src: "https://res.cloudinary.com/hnhbf8yt/video/upload/v.../pov-2.mp4", poster: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721300/5_rqfo11.jpg", caption: "Southy doing his thing" },
+  { id: 4, src: "https://res.cloudinary.com/hnhbf8yt/video/upload/v.../pov-2.mp4", poster: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721337/9_njcfpe.jpg", caption: "DJ was on Fire!!!" },
+  { id: 5, src: "https://res.cloudinary.com/hnhbf8yt/video/upload/v.../pov-2.mp4", poster: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721345/10_uuqr9p.png", caption: "Who's passing out love notes at DSB?" },
+  { id: 6, src: "https://res.cloudinary.com/hnhbf8yt/video/upload/v.../pov-2.mp4", poster: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721354/11_oxrx45.jpg", caption: "Spotted an introvert" },
+  { id: 7, src: "https://res.cloudinary.com/hnhbf8yt/video/upload/v.../pov-2.mp4", poster: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721285/4_r4swfl.jpg", caption: "Bro was locked in on the game" },
+  { id: 8, src: "https://res.cloudinary.com/hnhbf8yt/video/upload/v.../pov-2.mp4", poster: "https://res.cloudinary.com/hnhbf8yt/image/upload/v1784721829/IMG_1772_qmx29t.jpg", caption: "Prettiest girl spotted at DSB" },
   
 ];
 
