@@ -26,18 +26,15 @@ export default function AboutPage() {
           <Reveal>
             <p className="eyebrow text-brnch-orange-deep">The Story</p>
             <p className="mt-5 text-base leading-relaxed text-brnch-espresso/75 md:text-lg">
-              D SUNDAY BRNCH began as a private table for twenty friends who
-              didn&rsquo;t want their Sunday to end when the plates were
-              cleared. What started as an afternoon of good food and a
-              borrowed speaker turned into Lagos&rsquo; most anticipated
-              recurring gathering — a party that respects both the linen
-              tablecloth and the dance floor.
+              D SUNDAY BRNCH is more than just a party, it's a carefully curated lifestyle experience where great music, good food, beautiful people, and unforgettable moments come together.
+              Held every 1st and 3rd Sunday, we create a space where friends reconnect, strangers become friends, and every event feels like the highlight of the weekend. From high-energy DJ sets and premium cocktails to immersive décor and vibrant entertainment, every detail is designed to deliver an atmosphere that's stylish, exciting, and unforgettable.
+              Whether you're celebrating a special occasion, enjoying a relaxed afternoon brunch, or dancing into the evening, D SUNDAY BRNCH offers an experience that blends luxury, culture, and community in one destination.
             </p>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="eyebrow text-brnch-orange-deep">The Mission</p>
             <p className="mt-5 text-base leading-relaxed text-brnch-espresso/75 md:text-lg">
-              We exist to give Lagos a reason to dress up twice a month — not
+              We exist to give Benin a reason to dress up twice a month. Not
               for a random Friday, but for a Sunday that ends better than it
               started. Every edition is built around the same principle:
               exceptional hosting, a curated crowd, and a soundtrack that
@@ -53,7 +50,7 @@ export default function AboutPage() {
           <Reveal>
             <p className="eyebrow text-brnch-orange-deep">The Experience</p>
             <h2 className="mt-5 max-w-2xl font-display text-3xl font-bold text-brnch-espresso md:text-5xl">
-              Three hours of lunch. Five hours of everything else.
+              One hour of lunch. Five hours of everything else.
             </h2>
           </Reveal>
 
@@ -61,11 +58,11 @@ export default function AboutPage() {
             {[
               {
                 title: "Arrive",
-                copy: "Terraces open at 1PM. Tables are set, the first tracks are warm, and golden hour is still two hours away.",
+                copy: "Trafik open at 1PM. Tables are set, the first tracks are warm, and golden hour is still two hours away.",
               },
               {
                 title: "Unwind",
-                copy: "Plates move, conversation carries, and the resident DJ builds the room slowly — brunch with a pulse.",
+                copy: "Plates move, conversation carries, and the resident DJ builds the room slowly. Brunch with a pulse.",
               },
               {
                 title: "Dance",

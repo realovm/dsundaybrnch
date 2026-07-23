@@ -49,7 +49,7 @@ export default function Footer() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@email.com"
+              placeholder="osakpolo@gmail.com"
               className="w-full rounded-full border border-brnch-cream/30 bg-transparent px-5 py-3 text-sm outline-none placeholder:text-brnch-cream/40 focus:border-brnch-orange"
             />
             <button
