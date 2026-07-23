@@ -109,7 +109,7 @@ export default function Footer() {
 
       <div className="mx-auto mt-16 flex max-w-7xl flex-col items-center justify-between gap-4 border-t border-brnch-cream/10 pt-6 text-xs text-brnch-cream/40 md:flex-row">
         <p>© {new Date().getFullYear()} D SUNDAY BRNCH. All rights reserved.</p>
-        <p>Benin, Nigeria</p>
+        <p>Benin City, Nigeria</p>
       </div>
     </footer>
   );
