@@ -29,7 +29,7 @@ export default function Home() {
               afternoon tables to Music disks.
               Long lunches slide into golden-hour sets, plates give way to
               dance floors, and the whole thing repeats.Same energy, same
-              venue — every 1st and 3rd Sunday.
+              venue every 1st and 3rd Sunday of the month.
             </p>
           </Reveal>
         </div>
