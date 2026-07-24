@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
 import { upcomingEvents } from "@/lib/content";
 
@@ -24,9 +24,11 @@ export default function ReservationForm() {
     const guests = form.get("guests");
     const notes = form.get("notes");
 
-    const event = upcomingEvents.find((ev) => ev.slug === eventId);
+    const event = upcomingEvents.find(function (ev) {
+      return ev.slug === eventId;
+    });
 
-    const message = [
+    const lines = [
       "Hi D SUNDAY BRNCH! I would like to reserve a spot.",
       "",
       "Event: " + (event ? event.title : eventId),
@@ -35,8 +37,9 @@ export default function ReservationForm() {
       "Email: " + email,
       "Phone: " + phone,
       "Guests: " + guests,
-      "Notes: " + (notes || "none"),
-    ].join("\n");
+      "Notes: " + (notes ? notes : "none")
+    ];
+    const message = lines.join("\n");
 
     const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
 
@@ -52,15 +55,9 @@ export default function ReservationForm() {
           Almost there.
         </p>
         <p className="mt-3 text-sm text-brnch-espresso/70">
-          We opened WhatsApp with your reservation details filled in - just
-          hit send to confirm with our team.
+          We opened WhatsApp with your reservation details filled in, just hit send to confirm with our team.
         </p>
-        
-          href={waUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="mt-6 inline-block rounded-full bg-brnch-orange px-6 py-3 eyebrow text-brnch-cream"
-        >
+        <a href={waUrl} target="_blank" rel="noreferrer" className="mt-6 inline-block rounded-full bg-brnch-orange px-6 py-3 eyebrow text-brnch-cream">
           Open WhatsApp Again
         </a>
       </div>
@@ -146,8 +143,7 @@ export default function ReservationForm() {
       </button>
 
       <p className="text-xs text-brnch-espresso/50">
-        You will be redirected to WhatsApp to send your reservation details
-        to our team directly.
+        You will be redirected to WhatsApp to send your reservation details to our team directly.
       </p>
     </form>
   );
