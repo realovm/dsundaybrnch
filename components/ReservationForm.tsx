@@ -27,18 +27,18 @@ export default function ReservationForm() {
     const event = upcomingEvents.find((ev) => ev.slug === eventId);
 
     const message = [
-      "Hi D SUNDAY BRNCH! I'd like to reserve a spot.",
+      "Hi D SUNDAY BRNCH! I would like to reserve a spot.",
       "",
-      `Event: ${event?.title ?? eventId}`,
-      `Date: ${event?.displayDate ?? ""}`,
-      `Name: ${fullName}`,
-      `Email: ${email}`,
-      `Phone: ${phone}`,
-      `Guests: ${guests}`,
-      `Notes: ${notes || "—"}`,
+      "Event: " + (event ? event.title : eventId),
+      "Date: " + (event ? event.displayDate : ""),
+      "Name: " + fullName,
+      "Email: " + email,
+      "Phone: " + phone,
+      "Guests: " + guests,
+      "Notes: " + (notes || "none"),
     ].join("\n");
 
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
 
     setWaUrl(url);
     setStatus("done");
@@ -52,8 +52,8 @@ export default function ReservationForm() {
           Almost there.
         </p>
         <p className="mt-3 text-sm text-brnch-espresso/70">
-          We've opened WhatsApp with your reservation details filled in —
-          just hit send to confirm with our team.
+          We opened WhatsApp with your reservation details filled in - just
+          hit send to confirm with our team.
         </p>
         
           href={waUrl}
@@ -78,7 +78,7 @@ export default function ReservationForm() {
         >
           {upcomingEvents.map((event) => (
             <option key={event.slug} value={event.slug}>
-              {event.title} — {event.displayDate}
+              {event.title} - {event.displayDate}
             </option>
           ))}
         </select>
@@ -146,8 +146,8 @@ export default function ReservationForm() {
       </button>
 
       <p className="text-xs text-brnch-espresso/50">
-        You'll be redirected to WhatsApp to send your reservation details to
-        our team directly.
+        You will be redirected to WhatsApp to send your reservation details
+        to our team directly.
       </p>
     </form>
   );
