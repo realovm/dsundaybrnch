@@ -6,13 +6,25 @@ import { AnimatePresence, motion } from "framer-motion";
 
 type GalleryImage = { src: string; alt: string; tall?: boolean };
 
+const ITEMS_PER_PAGE = 8;
+
 export default function MasonryGallery({ images }: { images: GalleryImage[] }) {
   const [active, setActive] = useState<number | null>(null);
+  const [page, setPage] = useState(0);
+
+  const totalPages = Math.max(1, Math.ceil(images.length / ITEMS_PER_PAGE));
+  const start = page * ITEMS_PER_PAGE;
+  const currentImages = images.slice(start, start + ITEMS_PER_PAGE);
+
+  function goToPage(next: number) {
+    setActive(null);
+    setPage(next);
+  }
 
   return (
     <>
-      <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
-        {images.map((img, i) => (
+      <div className="columns-2 gap-4 lg:columns-3">
+        {currentImages.map((img, i) => (
           <button
             key={img.src + i}
             onClick={() => setActive(i)}
@@ -25,12 +37,34 @@ export default function MasonryGallery({ images }: { images: GalleryImage[] }) {
               alt={img.alt}
               fill
               loading="lazy"
-              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+              sizes="(min-width: 1024px) 33vw, 50vw"
               className="object-cover transition-transform duration-700 hover:scale-105"
             />
           </button>
         ))}
       </div>
+
+      {totalPages > 1 && (
+        <div className="mt-10 flex items-center justify-center gap-4">
+          <button
+            onClick={() => goToPage(page - 1)}
+            disabled={page === 0}
+            className="rounded-full border border-brnch-espresso/20 px-6 py-3 eyebrow text-brnch-espresso transition-colors hover:border-brnch-orange hover:text-brnch-orange disabled:opacity-30 disabled:hover:border-brnch-espresso/20 disabled:hover:text-brnch-espresso"
+          >
+            Prev
+          </button>
+          <span className="eyebrow text-brnch-espresso/50">
+            {page + 1} / {totalPages}
+          </span>
+          <button
+            onClick={() => goToPage(page + 1)}
+            disabled={page >= totalPages - 1}
+            className="rounded-full border border-brnch-espresso/20 px-6 py-3 eyebrow text-brnch-espresso transition-colors hover:border-brnch-orange hover:text-brnch-orange disabled:opacity-30 disabled:hover:border-brnch-espresso/20 disabled:hover:text-brnch-espresso"
+          >
+            Next
+          </button>
+        </div>
+      )}
 
       <AnimatePresence>
         {active !== null && (
@@ -49,8 +83,8 @@ export default function MasonryGallery({ images }: { images: GalleryImage[] }) {
               className="relative h-[85vh] w-full max-w-4xl"
             >
               <Image
-                src={images[active].src}
-                alt={images[active].alt}
+                src={currentImages[active].src}
+                alt={currentImages[active].alt}
                 fill
                 sizes="100vw"
                 className="object-contain"

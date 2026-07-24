@@ -4,63 +4,65 @@ import { useState, FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
 import { upcomingEvents } from "@/lib/content";
 
+const WHATSAPP_NUMBER = "2348140128922";
+
 export default function ReservationForm() {
   const searchParams = useSearchParams();
   const preselected = searchParams.get("event");
 
   const [eventId, setEventId] = useState(preselected ?? upcomingEvents[0]?.slug ?? "");
-  const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">(
-    "idle"
-  );
-  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<"idle" | "done">("idle");
+  const [waUrl, setWaUrl] = useState("");
 
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setStatus("loading");
     const form = new FormData(e.currentTarget);
 
-    const payload = {
-      eventId,
-      fullName: form.get("fullName"),
-      email: form.get("email"),
-      phone: form.get("phone"),
-      guests: Number(form.get("guests")),
-      notes: form.get("notes"),
-    };
+    const fullName = form.get("fullName");
+    const email = form.get("email");
+    const phone = form.get("phone");
+    const guests = form.get("guests");
+    const notes = form.get("notes");
 
-    try {
-      const res = await fetch("/api/reservations", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      const data = await res.json();
+    const event = upcomingEvents.find((ev) => ev.slug === eventId);
 
-      if (!res.ok || !data.ok) {
-        throw new Error(data.error ?? "Something went wrong.");
-      }
+    const message = [
+      "Hi D SUNDAY BRNCH! I'd like to reserve a spot.",
+      "",
+      `Event: ${event?.title ?? eventId}`,
+      `Date: ${event?.displayDate ?? ""}`,
+      `Name: ${fullName}`,
+      `Email: ${email}`,
+      `Phone: ${phone}`,
+      `Guests: ${guests}`,
+      `Notes: ${notes || "—"}`,
+    ].join("\n");
 
-      setStatus("done");
-      setMessage(
-        `You're confirmed. Reference: ${data.confirmationId}. A ticket has been sent to your email.`
-      );
-    } catch (err) {
-      setStatus("error");
-      setMessage(
-        err instanceof Error
-          ? err.message
-          : "We couldn't process that reservation. Please try again."
-      );
-    }
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+    setWaUrl(url);
+    setStatus("done");
+    window.open(url, "_blank");
   }
 
   if (status === "done") {
     return (
       <div className="rounded-2xl bg-brnch-espresso/[0.04] p-8 text-center">
         <p className="font-display text-2xl font-bold text-brnch-espresso">
-          You&rsquo;re in.
+          Almost there.
         </p>
-        <p className="mt-3 text-sm text-brnch-espresso/70">{message}</p>
+        <p className="mt-3 text-sm text-brnch-espresso/70">
+          We've opened WhatsApp with your reservation details filled in —
+          just hit send to confirm with our team.
+        </p>
+        
+          href={waUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-6 inline-block rounded-full bg-brnch-orange px-6 py-3 eyebrow text-brnch-cream"
+        >
+          Open WhatsApp Again
+        </a>
       </div>
     );
   }
@@ -136,20 +138,16 @@ export default function ReservationForm() {
         />
       </div>
 
-      {status === "error" && (
-        <p className="text-sm text-red-500">{message}</p>
-      )}
-
       <button
         type="submit"
-        disabled={status === "loading"}
-        className="rounded-full bg-brnch-orange px-8 py-4 eyebrow text-brnch-cream transition-opacity hover:opacity-90 disabled:opacity-50"
+        className="rounded-full bg-brnch-orange px-8 py-4 eyebrow text-brnch-cream transition-opacity hover:opacity-90"
       >
-        {status === "loading" ? "Processing…" : "Confirm Reservation"}
+        Confirm Reservation
       </button>
 
       <p className="text-xs text-brnch-espresso/50">
-        Reservations are processed securely through Pevent.ng.
+        You'll be redirected to WhatsApp to send your reservation details to
+        our team directly.
       </p>
     </form>
   );
